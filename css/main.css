@@ -68,3 +68,391 @@
 .left_box .list > li:hover .icon--more {
     display: block;
 }
+
+#contents_container {
+    max-width: 500px;
+    position: relative;
+    left: 190px;
+}
+
+#wrapper .create_box {
+    background-color: #fff;
+    margin-bottom: 10px;
+    border: 1px solid #dddfe2;
+    border-radius: 3px;
+}
+
+.create_box .title {
+    color: #4b4f56;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    /* 행간 조절 */
+    padding: 8px 5px;
+    background-color: #f5f6f7;
+    border-bottom: 1px solid #dddfe2;
+    border-radius: 2px 2px 0 0;
+    /* 윗 부분만 둥글게 */
+}
+
+.create_box .text_field {
+    padding: 8px;
+}
+
+.create_box .text_field .top {
+    display: flex;
+    align-items: center;
+    color: #90949c;
+    font-size: 12px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #dddfe2;
+}
+
+.create_box .text_field .top .profile_img {
+    margin-right: 20px;
+}
+
+.create_box .top > p {
+    width: 100%;
+}
+
+.create_box #text_field {
+    border: none;
+    height: 24px;
+    width: 90%;
+    resize: none;
+   /* 늘어나고 줄어들고 가능한 것  */    
+    font-size: 15px;
+}
+
+.create_box .text_field .middle {
+
+}
+
+.create_box .text_field .bottom {
+    font-size: 12px;
+    color: #4b4f56;
+    font-weight: bold;
+}
+
+.create_box .bottom .import-btn {
+    border-radius: 30px;
+    background: var(--fds-gray-00);
+    padding: 5px 10px;
+    display: inline-flex;
+    /* 그냥 flex일 경우 block형태로 작동, 가로배치 시킴과 동시에 inline처럼 작동*/
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.create_box .bottom .import-btn:hover {
+    background-color: #232324;
+}
+
+#id_photo {
+    display: none;
+}
+
+#photo_label {
+    display: flex;
+    align-items: center;
+}
+
+.create_box .submit {
+    border-top: 1px solid #dddfe2;
+    text-align: center;
+    padding: 5px 10px;
+    display: none;
+}
+
+.create_box .submit input {
+    width: 100%;
+    height: 28px;
+    border-radius: 3px;
+    background: #4267b2;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.create_box .submit input:disabled {
+    background: #9cb4d8;
+}
+
+#wrapper .contents {
+    background-color: #fff;
+    margin-bottom: 10px;
+    border: 1px solid #dddfe2;
+    border-radius: 3px;
+    color: var(--fds-gray-70);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.contents header {
+    position: relative;
+    padding: 10px 20px;
+}
+
+.contents .profile_container {
+    display: flex;
+    align-items: center;
+}
+
+.contents .profile_container .name {
+    color: var(--fds-fb-blue-75);
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.contents .profile_container .time {
+    font-size: 12px;
+    color: #616770;
+}
+
+.contents .profile_container .profile_img {
+    width: 40px;
+    height: 40px;
+}
+
+.contents .more {
+    margin-left: auto;
+    cursor: pointer;
+    padding: 10px 0;
+    position: relative;
+}
+
+.contents .more.active .hidden_menu {
+    display: block;
+}
+
+.contents .hidden_menu {
+    position: absolute;
+    /* absolute로 띄우기, 부모 'more'에 relative를 걸어놔서 more 안에서만 띄어짐*/
+    right: 20px;
+    top: 30px;
+    width: 100px;
+    border-radius: 3px;
+    border: 1px solid #dddfe2;
+    display: none;
+}   
+
+.contents .hidden_menu > li {
+    padding: 5px 10px;
+    background-color: #fff;
+    text-align: center;
+    border-bottom: 1px solid rgba(221,223,226,0.57);
+}
+
+.contents .hidden_menu > li > * {
+    /* *: li 안에 오는 모든 태그를 대상으로 */
+    background: transparent;
+    border: none;
+    font-size: 12px;
+    outline: none;
+    cursor: pointer;
+}
+
+.contents .hidden_menu > li:hover {
+    background: #ddd;
+}
+
+.contents .main_article {
+    padding: 5px 20px;
+    color: var(--fds-gray-100);
+    font-size: 14px;
+    line-height: 1.38;
+    font-weight: normal;
+}
+
+.contents .img_section {
+    overflow: hidden;
+    /* 넘치지 않게 조절 */
+    box-sizing: border-box;
+    /* box-sizing: border가 들어갈 때 border를 포함해서 값을 계산  */
+    border: 1px solid #dddfe2;
+}
+
+.contents .img_section img{
+    width: 100%;
+    /* 너비를 100%로 한다면 부모의 크기로 사이즈가 조절됨. */
+}
+
+.contents .ajax_field {
+    padding: 10px 20px;
+    /* 넣지 않으면 글자가 공백없이 사이드에 달라 붙음. margin 보다 보기 좋음 */
+    display: flex;
+    /* 가로배치 */
+    justify-content: space-between;
+    /* 양쪽 끝 정렬 */
+}
+
+.contents .btn_container {
+    display: flex;
+    height: 42px;
+    border-top: 1px solid #dddfe2;
+    border-bottom: 1px solid #dddfe2;
+    margin: 0 10px
+}
+
+.contents .btn_container > div {
+    flex: 1;
+    /* grow shrink basis를 1:1:1 비율로 잡겠다. */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contents .btn_container > div:hover {
+    background: var(--fds-gray-10);
+}
+
+.contents .comment_container {
+    padding: 10px 20px;
+    color: var(--fds-fb-blue-75);
+}
+
+.contents .comment_container .id {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.contents .comment_container .text_container {
+    display: flex;
+    padding: 10px;
+    background: var(--fds-gray-05);
+    border-radius: 30px;
+}
+
+.contents .comment_container .name {
+    margin-right: 5px;
+}
+
+.contents .comment_container .text_field {
+    color: var(--fds-gray-100);
+    font-weight: 300;
+}
+
+.contents .comment_input {
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+}
+
+.contents .comment_input .input_container {
+    width: 100%;
+    padding: 7px;
+    background: var(--fds-gray-05);
+    border: 1px solid #ccc0d5;
+    border-radius: 30px;
+    text-align: center;
+    position: relative;
+}
+
+
+.contents .comment_input .input_container input {
+    width: 90%;
+    height: 100%;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.contents .comment_input .input_container button {
+    background: transparent;
+    border: none;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+#wrapper .right_box {
+    width: 308px;
+    background: #fff;
+    position: fixed;
+    right: 550px;
+    top: 52px;
+    border-radius: 3px;
+    padding-bottom: 20px;
+}
+
+.right_box .title {
+    padding: 10px 20px;
+    font-size: 13px;
+    color: #616770;
+    border-bottom: 1px solid #dadde1;
+}
+
+.right_box .right_profile {
+    display: flex;
+    padding: 10px 10px;
+    align-items: center;
+    border-bottom: 1px solid #dadde1;
+    margin: 0 10px;
+}
+
+.right_box .right_profile .profile_img {
+    width: 50px;
+    height: 50px;
+}
+
+.right_box .right_profile .detail .name {
+    color: var(--fds-fb-blue-75);
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.right_box .right_profile .detail .message {
+    color: #90949c;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+#side_box {
+/* id: #, class: . */
+    width: 205px;
+    height: 100vh;
+    /* vh: 내 화면의 높이 값, 내 화면에 가득차도록 */
+    position: fixed;
+    right: 0;
+    top: 52px;  
+    border-left: 1px solid #dadde1;
+}
+
+#side_box > ul {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#side_box > ul >li {
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+}
+
+#side_box > ul > li:hover {
+    background: #dddfe2;
+    box-shadow: 1px 0 0 #eaebed inset;
+    /* x, y, block, color, inset: 안에 */
+}
+
+#side_box .light {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgb(66, 183, 42);
+    margin-left: auto;
+}
+
+#side_box .profile_img {
+    width: 32px;
+    height: 32px;
+}
+
