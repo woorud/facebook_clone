@@ -1,0 +1,70 @@
+#wrapper {
+    width: 1012px;
+    margin: 0 auto;
+    padding-right: 205px;
+    position: relative;
+    top: 52px;
+}
+
+#wrapper .inner {
+    width: 100%;
+    position: relative;
+}
+
+#wrapper .inner .left_box {
+    width: 180px;
+    height: 500px;
+    /* background: tomato; */
+    position: fixed;
+    top: 52px;
+    left: 300px;
+    font-size: 13px;
+}
+
+.left_box .icon--more {
+    margin-left: auto;
+    display: none;
+}
+
+.left_box .my_name{
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+
+.left_box .my_name > a {
+    display: flex;
+    align-items: center;
+}
+
+.left_box .list > li {
+    padding: 5px 10px;
+    margin-bottom: 2px;
+    border: 1px solid transparent;
+/* 1픽셀의 단선을 투명하게 만들어준다. 만들되 보이지 않도록 solid transparent */
+}
+
+.left_box .list > li > a {
+    display: flex;
+    align-items: center;
+}
+
+.left_box .list > li.active {
+    /* '. ': 함유, '.': 함께 가지고 있는 것 */
+    background-color: var(--fds-gray-00);
+    border: 1px solid #dddfe2
+    /* 마우스를 올려놓았을 때와 똑같은 이벤트 */
+}
+
+.left_box .list > li.active .icon--more {
+    display: block;
+}
+
+.left_box .list > li:hover {
+    background-color: var(--fds-gray-00);
+    border: 1px solid #dddfe2
+}
+
+.left_box .list > li:hover .icon--more {
+    display: block;
+}
