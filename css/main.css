@@ -17,7 +17,7 @@
     /* background: tomato; */
     position: fixed;
     top: 52px;
-    left: 300px;
+    /* left: 300px; */
     font-size: 13px;
 }
 
@@ -297,6 +297,10 @@
     margin: 0 10px
 }
 
+.contents .btn_container .like_btn.active span {
+    background: url("../imgs/bg05.png")no-repeat 0 -422px;
+}
+
 .contents .btn_container > div {
     flex: 1;
     /* grow shrink basis를 1:1:1 비율로 잡겠다. */
@@ -316,8 +320,13 @@
 
 .contents .comment_container .id {
     display: flex;
-    margin-bottom: 10px;
+    margin-bottom: 10px; 
     align-items: center;
+}
+
+.contents .comment_container .delete {
+    margin-left: auto;
+    cursor: pointer;
 }
 
 .contents .comment_container .text_container {
@@ -455,4 +464,22 @@
     width: 32px;
     height: 32px;
 }
+
+@media screen and (max-width:1240px) {
+    #wrapper {
+        padding-right: 0;
+        width: 90%;
+    }
+
+    #contents_container {
+        position: static;
+        /* 기본값 */
+        left: 0;
+        margin: 0 auto;
+        /* 가운데 정렬 */
+    }
+
+
+
+
 
