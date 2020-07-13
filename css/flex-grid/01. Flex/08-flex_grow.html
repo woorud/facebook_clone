@@ -1,0 +1,31 @@
+<!-- flex-basis: 아이템의 기본 크기 설정, 공간의 크기 -->
+<!-- flex-grow: 0보다 큰 숫자가 들어가는 순간 유연하게 늘어남, 커짐, 기본값: 0, 유연한 박스 -->
+<!-- flex-shirink: 0보다 큰 숫자가 들어가는 순간 유연하게 늘어남, 줄어듬, 기본값: 1, flex-shirink: 0; -> 원래 크기에서 줄어들지 않음 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>CSS Flex</title>
+    <link rel="stylesheet" href="default.css">
+    <style>
+        .flex-container {
+            display: flex;            
+        }
+        .flex-item {
+            flex-grow: 1;
+        }
+        .flex-item:nth-child(2) {
+            flex-grow: 3;
+        }
+    </style>
+</head>
+<body>
+	<div class="flex-container">
+		<div class="flex-item">AAAAAAAAAAAA</div>
+		<div class="flex-item">BBB</div>
+		<div class="flex-item">CCCCCCC</div>
+	</div>
+</body>
+</html>
