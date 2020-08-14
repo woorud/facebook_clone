@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>CSS Grid</title>
+	<link rel="stylesheet" href="default.css">
+	<style>
+		.grid-container {
+            height: 100vh;
+			display: grid; 
+            /* place-items: center start; */
+            /* align-items: stretch;
+            justify-items: right; */
+            /* place-content: space-around center; */
+            /* align-content: space-between;
+            justify-content: space-between; */
+            grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+            grid-template-rows: repeat(auto-fit, minmax(200px, auto));
+            gap: 1rem;
+		}
+        .grid-item:nth-child(2) {
+            /* align-self: start;
+            justify-self: right; */
+            place-self: end left;
+        }
+        .grid-item:nth-child(4) {
+            order: 3;
+        }
+        .grid-item:nth-child(5) {
+            order: 2;
+        }
+        .grid-item:nth-child(6) {
+            order: 1;
+        }
+        .grid-item:nth-child(8) {
+            z-index: 1;
+            transform: scale(2);
+        }
+        
+	</style>
+</head>
+<body>
+    <div class="grid-container">
+		<div class="grid-item">A</div>
+		<div class="grid-item">B</div>
+		<div class="grid-item">C</div>
+		<div class="grid-item">D</div>
+		<div class="grid-item">E</div>
+		<div class="grid-item">F</div>
+		<div class="grid-item">G</div>
+		<div class="grid-item">H</div>
+		<div class="grid-item">I</div>
+	</div>
+</body>
+</html>
