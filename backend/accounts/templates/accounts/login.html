@@ -15,8 +15,7 @@
     <div id="login_section">
         <h1 class="logo"><a href="#" class="icon--main-logo"></a>FACEBOOK</h1>
         <form method="POST" action="{% url 'accounts:login' %}">
-            {% csrf_token %} # 데이터베이스에서 토큰 값을 발행하고 폼에서 입력을 받았을 때 토큰 값이 동일한지 확인, 보안
-            
+            {% csrf_token %}            
             <div class="id_section">
                 <div><label for="id_username">아이디</label></div>
                 <div><input type="text" id="{{ form.username.id_for_label }}" name="{{ form.username.html_name }}"></div>

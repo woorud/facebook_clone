@@ -10,10 +10,9 @@ class LoginForm(forms.ModelForm):
         fields = ['username', 'password']
 
 class SignupForm(UserCreationForm):
-    username = forms.CharField(label='사용자명', widget＝forms.TextInput(attrs={
-        'pattern':'[a-zA-Z0-9]+', 
-        'title':'특수문자, 공백 입력 불가',
-
+    username = forms.CharField(label='사용자명',widget=forms.TextInput(attrs={
+        'pattern': '[a-zA-Z0-9]+',
+        'title': '특수문자, 공백 입력불가',
     }))
     
     nickname = forms.CharField(label='닉네임')

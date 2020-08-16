@@ -6,7 +6,7 @@ from .forms import SignupForm, LoginForm
 
 def signup(request):
     if request.method == 'POST':
-        form = SingupForm(request.POST, request.FILES)
+        form = SignupForm(request.POST, request.FILES)
         if form.is_valid():
             user = form.save()
             return redirect('accounts:login')
@@ -31,7 +31,7 @@ def login_check(request):
             login(request, user)
             return redirect('/')
     else:
-        form = loginForm()
+        form = LoginForm()
         
         
     return render(request, 'accounts/login.html', {
