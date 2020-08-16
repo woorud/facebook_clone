@@ -1,5 +1,4 @@
-/* html은 root element이기 때문에 모든 html에 이러한 스타일을 주겠다. */
-:root { 
+:root {
     --fds-active-icon: #3578E5;
     display: inline-block;
     --fds-attachment-footer-background: #F2F3F5;
@@ -392,15 +391,23 @@
     --wash: #E4E6EB;
     --web-wash: #F0F2F5;
     --warning: hsl(40, 89%, 52%);
-}   
+}
+
+
+body {
+    background-color: #e9ebee;
+    color: #1d2129;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+
+.icon:hover {
+    opacity: 1;
+}
 
 .icon {
     margin-right: 10px;
 }
-
-.icon:hover {
-    opacity: 1;
-}/* 아이콘에 마우스르 올렸을 때 */
 
 .icon--send {
     display: inline-block;
@@ -486,7 +493,7 @@
     height: 24px;
     opacity: .6;
 }
-/* 올려놓으면 진한 색상을 보이기 위해 옅은 색상 설정 */
+
 
 .icon--question-black {
     display: inline-block;
@@ -574,6 +581,8 @@
     height: 18px;
 }
 
+
+
 .icon--arrow-right {
     display: inline-block;
     background: url('../imgs/bg06.png') no-repeat -136px -2433px;
@@ -588,62 +597,50 @@
     height: 16px;
 }
 
-body {
-    background-color: #e9ebee;
-    color: #1d2129;
-    font-family: 'Nanum Gothic', sans-serif;    
-}
 
-.profile_img {
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    overflow: hidden;
-    /* 절대 넘어서 보이지 못하도록 하는 것, overflow */
-    background-color: #fff;
-    margin-right: 10px;
-}
 
-.profile_img img {
-    width: 100%;
-    height: 100%;
-    /* 이미지 잘림 방지 */
-}
+
 
 #header {
     width: 100vw;
-    /* vw: 뷰포트 내가 보고있는 화면 */
     background-color: var(--fds-fb-blue-70);
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 9999; 
-    /*헤더가 따라 내려오면서 다른 컨텐츠에 뭍히면 안되기 때문에 제일 위에 설정*/
+    z-index: 999;
 }
 
+
 #header .inner {
-    width: 1012px;
     height: 42px;
-    /* background-color: orange; */
-    margin: 0 auto 0 auto;
+    width: 1012px;
+    margin: 0 auto;
     padding-right: 205px;
+    /*background: red;*/
     display: flex;
     justify-content: space-between;
-    /* 메인 축 정렬 */
     align-items: center;
-    /* 서브 축 정렬 */
 }
+
 
 #header .inner .left {
     display: flex;
-    /* 상속한 부모에 맞게 설정, flex */
 }
 
-#header .inner .left .serch_container {
+#header .inner .left h1 {
+    margin-right: 10px;
+}
+
+#header .inner .left h1 > a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#header .inner .left .search_container {
     width: 380px;
     height: 23px;
-    background-color: #fff;
+    background: #fff;
     position: relative;
 }
 
@@ -654,30 +651,52 @@ body {
     top: 50%;
     transform: translateY(-50%);
     border: none;
-    background-size: transparent;
+    background: transparent;
 }
 
-#search {
+
+
+
+.profile_img {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #fff;
+    margin-right: 10px;
+}
+
+.profile_img img {
+    width: 100%;
+    height: 100%;
+}
+
+#search_box {
     border: none;
     border-radius: 3px;
-    /* 둥근 모서리 */
     width: 100%;
+    /*height: 23px;*/
     padding: 5px 10px;
+}
+
+#search_box::placeholder {
+    color: gray;
+    text-indent: 5px;
 }
 
 #header .inner .right {
     display: flex;
     font-size: 12px;
-    color: #fff;
     font-weight: bold;
+    color: #fff;
     align-items: center;
 }
 
 #header .inner .right > div {
-/* 친자식 선택자 > */
-    margin-left: 20px; 
-    cursor: pointer;
     position: relative;
+    margin-left: 20px;
+    cursor: pointer;
 }
 
 #header .inner .right .my_name {
@@ -698,23 +717,24 @@ body {
 
 #header .inner .right > div:last-child:after {
     display: none;
-}   
+}
 
-#header .right .icon {
+
+#header .right .icon{
     margin-right: 0;
 }
 
-#header .icon--bell-black {
+#header .icon--bell-black{
     position: relative;
 }
 
 #header .bell:before{
     content: '1';
-    color: white;
-    background-color: var(--notification-badge);
+    color: #fff;
+    background: var(--notification-badge);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 11px;
     height: 11px;
     border-radius: 50%;
@@ -725,150 +745,122 @@ body {
     z-index: 100;
 }
 
-#header .notice {
+
+#header .notice{
     width: 432px;
-    background: white;
+    background: #fff;
     position: absolute;
     right: -16px;
     top: 34px;
     z-index: 1000;
     border: 1px solid rgba(100, 100, 100, .4);
     border-radius: 0 0 2px 2px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
     color: #1d2129;
     display: none;
 }
 
-#header .bell.on .notice {
-    display: block;
-}
-
-#header .icon--arrow-top {
+#header .notice .icon--arrow-top{
     position: absolute;
     top: -16px;
     right: 10px;
 }
 
-#header .notice h3 {
-    font-size: 11px;
+#header .notice h3{
+    font-size: 12px;
     color: #333;
     padding: 8px 12px 6px;
     border-bottom: solid 1px #dddfe2;
 }
 
-#header .notice ul {
+
+#header .notice > ul{
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: scroll;
     max-height: 500px;
 }
 
-#header .notice ul > li {
+#header .notice > ul > li{
+
     padding: 10px 12px;
     font-weight: 300;
     border-bottom: 1px solid #dddfe2;
 }
 
-#header .notice ul > li > a {
+#header .notice > ul > li > a{
     display: flex;
-    align-items: center; 
+    align-items: center;
 }
-
-#header .notice ul > li:hover {
+#header .notice > ul > li:hover{
     background-color: #edf2fa;
 }
 
-#header .notice .profile_img {
+#header .notice .profile_img{
     width: 48px;
     height: 48px;
 }
 
-#header .notice .name {
+#header .notice > ul > li .name{
     font-weight: bold;
 }
-
-#header .notice .time {
+#header .notice > ul > li .time{
     color: #90949c;
     margin-top: 10px;
 }
+/*---------//header--------*/
 
-@media screen and (max-width:1240px) {
-    #wrapper .left_box {
+
+
+
+
+
+@media screen and (max-width:1240px){
+    #wrapper .left_box{
         display: none;
     }
 
-    #wrapper .right_box { 
+    #wrapper .right_box{
         display: none;
     }
 
-    #wrapper .side_box {
+    #side_box{
         display: none;
     }
 
-    #side_box {
-        display: none;
+
+
+    #header .inner {
+        padding-right: 0;
     }
+
 
     #header .inner{
-        padding-right: 0;
         width: 90%;
     }
-} 
 
-@media screen and (max-width:800px) {
-    #header .inner .left {
-        display: none;
+    #user_list .scroll_list .profile_img{
+        display:none;
     }
 
-    #header .inner .right {
+
+}
+
+@media screen and (max-width:800px){
+
+    #header .inner .left{
+        display:none;
+    }
+
+    #header .inner .right{
         width: 100%;
         justify-content: space-between;
     }
-
-    #header .inner .right > div:after {
-        display: none;   
-    }
-
-    #header .inner .right .question {
+    #header .inner .right .question{
         margin-right: 20px;
     }
+    #header .inner .right > div:after{
+        display: none;
+    }
+
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

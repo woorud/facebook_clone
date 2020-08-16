@@ -1,14 +1,24 @@
+
+
 window.addEventListener('DOMContentLoaded',function () {
+
+
+
     const createBox = document.querySelector('.create_box');
     const textField = document.querySelector('#text_field');
     const fileInput  = document.querySelector( "#id_photo" );
     const submit  = document.querySelector( "#submitBtn" );
+
+    // Show image
+
 
     let canvas = document.getElementById('imageCanvas');
     let ctx = canvas.getContext('2d');
 
 
     let reader = new FileReader();
+
+
 
     function handleImage(e){
         let reader = new FileReader();
@@ -32,6 +42,8 @@ window.addEventListener('DOMContentLoaded',function () {
         };
         reader.readAsDataURL(e.target.files[0]);
     }
+
+
 
     fileInput.addEventListener('change', handleImage, false);
 

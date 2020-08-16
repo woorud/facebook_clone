@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'allauth',
+    'allauth.account',
     'accounts'
 ]
 
@@ -127,7 +129,7 @@ SITE_ID = 1
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'config', 'static')
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'STATICFILES_DIRSes')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Media Files
 MEDIA_URL = '/media/'
