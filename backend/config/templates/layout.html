@@ -1,9 +1,13 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko-KR">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <meta class="viewport" content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=.1.0, minimum-scale=1.0'>
+    
+    <title>Facebook</title>
+    
+    <link rel="shortcut icon" href="{% static 'imgs/favicon.png' %}">
     <link rel="stylesheet" href="{% static 'css/reset.css' %}">
     <link rel="stylesheet" href="{% static 'css/common.css' %}">
     
@@ -12,12 +16,16 @@
     
 </head>
 <body>
-    {% block content %}
-    {% endblock %}
-    
-    
-    
-    {% block js %}
-    {% endblock %}
+    <section id="container">
+        <header>id='header'
+        {% block content %}
+        {% endblock %}
+
+
+
+        {% block js %}
+        {% endblock %}
+        </header>
+    </section>
 </body>
 </html>
