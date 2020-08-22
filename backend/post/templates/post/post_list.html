@@ -93,7 +93,11 @@
                             <div class="comment">댓글<span class="comment_count" id="comment-count-{{ post.id }}">1</span>개</div>
                         </div>
                         <div class="btn_container">
+                            {% if user in post.like_user_set.all %}
                             <div class="like-bin active" name="{{ post.id }}" data-name="heartbeat"><span class="icon icon--like-line"></span>좋아요</div>
+                            {% else %}
+                            <div class="like-bin" name="{{ post.id }}" data-name="heartbeat"><span class="icon icon--like-line"></span>좋아요</div>
+                            {% endif %}
                             <div class="comment-btn"><span class="icon icon--comment-line"></span>댓글</div>
                         </div>
                         <div class="comment_container">
