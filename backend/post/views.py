@@ -3,6 +3,8 @@ from django.contrib.auth import get_user_model
 from .models import *
 from django.views.decorators.http import require_POST
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
+import json
 
 # Create your views here.
 def post_list(request):
