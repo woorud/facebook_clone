@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/save.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id="wrapper">
+    <div class="indder">
+        <div class="left_box">
+            <div class="my_name"></div>
+            
+        </div>
+        <ul class="list"></ul>
+            
+        <section id="contents_container"></section>
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+
+<div id="side_box"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block js %}
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="{% static 'js/save.js %'}"></script>
+{% endblock %}
