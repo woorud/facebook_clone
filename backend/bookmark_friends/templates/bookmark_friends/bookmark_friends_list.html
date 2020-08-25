@@ -45,6 +45,37 @@
                     {% endfor %}
                 {% endfor %}
             </div>
+            
+            <dif id="friends" class="hidden">
+                {% for frined_request in friend_requests %}
+                <article class="contents">                    
+                    <div class="thumbnail"><img src="{{ friend_request.from_user.profile.picture.url }}" alt=""></div>
+                    <div class="right_contents">
+                        <h1 class="heading">{{ friend_requestfrom_user.username }}님이 친구요청을 보냈습니다.</h1>
+                        <div class="btn_container">
+                            <button class="agree" data-name="friend_accept" name="{{ friend_request.id }}">수락</button>
+                        </div>
+                    </div>
+                </article>
+                
+                {% endfor %}
+                
+                {% for friend in friends %}
+                <article class="contents">                    
+                    <div class="thumbnail"><img src="{{ friend.user.profile.picture.url }}" alt=""></div>
+                    <div class="right_contents">
+                        <h1 class="heading">{{ friend.username }}님.</h1>
+                        <div class="btn_container">
+                            <button class="agree" data-name="friend_accept" name="{{ friend_request.id }}">수락</button>
+                        </div>
+                    </div>
+                
+                
+                {% endfor %}
+                
+                
+            </dif>
+        
         </section>
     </div>
 </div>
