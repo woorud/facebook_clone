@@ -46,7 +46,7 @@
                 {% endfor %}
             </div>
             
-            <dif id="friends" class="hidden">
+            <div id="friends" class="hidden">
                 {% for frined_request in friend_requests %}
                 <article class="contents">                    
                     <div class="thumbnail"><img src="{{ friend_request.from_user.profile.picture.url }}" alt=""></div>
@@ -69,21 +69,72 @@
                             <button class="agree" data-name="friend_accept" name="{{ friend_request.id }}">수락</button>
                         </div>
                     </div>
-                
-                
+                </article>
                 {% endfor %}
-                
-                
-            </dif>
-        
+            </div>        
         </section>
     </div>
 </div>
 
+<div id="side_box">
+    <ui>
+        {% for friend in friends%}
+            <li>
+                <div class="profile_img"><img src="{{ friend.user.profile.picture.url }}" alt=""></div>
+                <div class="name"></div>
+                <div class="light"></div>   
+            </li>
+        
+        
+        
+        {% endfor%}
+    </ui>
+</div>
+
+<script>
+    const friends = document.querySelector("#contents_container")
+    function delegationFunc(e){
+        let elem = e.target
+        console.log(elem);
+        
+        while (elem.getAttribute('data-name')){
+            elem = elem.parentNode;
+            
+            if (elem.nodeName == 'BODY'){
+                elem = null;
+                return ;
+            }
+            
+        }
+        if (elem.matches('[data-name="friends_accept"]')){
+            console.log('친구수락') ;
+            
+            const request_id = elem.getAttribute('name');
+            console.log(request_id);
+            
+            $.ajax({
+                type : 'POST',
+                url : "{% url 'accounts:accept_friend_request' %}",
+                data : {
+                    'pk' : request_id,
+                    'csrfmiddlewaretoken' : '{{ csrf_token }}'
+                },
+                dataType : 'json',
+                success : function(response){
+                    console.log("성공");
+                    location.reload();
+                }
+            })
+                 
+        }
+    }
+    friends.addEventListner('click', delegationFunc);
+    
+</script>
 
 
 
-<div id="side_box"></div>
+
 
 {% endblock %}
 

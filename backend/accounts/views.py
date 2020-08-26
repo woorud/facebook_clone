@@ -79,8 +79,8 @@ def accept_friend_request(request):
         # room_name = "{}, {}".format(from_user.username, to_user.username)
         
         # romm = Room.objects.create(room_name=room_name)
-        # Friend_objects.create(user=from_user, current_user=to_user, room=room)
-        # Friend_objects.create(user=to_user, current_user=from_user, room=room)
+        Friend_objects.create(user=from_user, current_user=to_user)
+        Friend_objects.create(user=to_user, current_user=from_user)
         
         # 현재 만들어진 친구요청을 삭제
         friend_request.delete()
