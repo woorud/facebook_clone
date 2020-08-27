@@ -20,24 +20,30 @@ def post_list(request):
         user_profile = user.profile
         
         friend_list = user.friends.all()
-        my_friend_user_list = list(map(lambda friend : friend.user, friend_list))
+        my_friend_user_list = list(map(lambda friend: friend.user, friend_list))
         
-        friends_request_list = user.friend_requests.all()
+        friend_request_list = user.friend_requests.all()
         
-        my_friend_request_user_list = list(map(lambda friend_request : friend_request.to_user, friend_request_list))
+        my_friend_request_user_list = list(map(lambda friend_request: friend_request.to_user, friend_request_list))
         
         return render(request, 'post/post_list.html', {
+            'tag': tag,
+            'tag_all': tag_all,
             'user_profile': user_profile,
-            'posts' : post_list,
-            'friends' : friends,
-            'request_friends' : request_friends,
-            'my_friend_user_list' : my_friend_user_list,
-            'my_friend_request_user_list' : my_friend_request_user_list
+            'posts': post_list,
+            'comment_form': comment_form,
+            'friends': friends,
+            'request_friends': request_friends,
+            'my_friend_user_list': my_friend_user_list,
+            'my_friend_request_user_list': my_friend_request_user_list,
         })
     else:
-        return render(request, 'post/post_list.html',
-                                 {'posts':post_list
-                                 }) 
+        return render(request, 'post/post_list.html', {
+            'tag': tag,
+            'tag_all': tag_all,
+            'posts': post_list,
+            'comment_form': comment_form,
+        })
 
 @login_required
 @require_POST
