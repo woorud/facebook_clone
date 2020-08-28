@@ -1,14 +1,18 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth import get_user_model
 from .models import *
+
 from django.views.decorators.http import require_POST
 from django.contrib.auth.decorators import login_required
+
 from django.http import HttpResponse
 import json
 
-# Create your views here.
+
+
 def post_list(request):
     post_list = Post.objects.all()
+    
     
     if request.user.is_authenticated:
         username = request.user
@@ -25,6 +29,7 @@ def post_list(request):
         friend_request_list = user.friend_requests.all()
         
         my_friend_request_user_list = list(map(lambda friend_request: friend_request.to_user, friend_request_list))
+        
         
         return render(request, 'post/post_list.html', {
             'tag': tag,
@@ -45,6 +50,7 @@ def post_list(request):
             'comment_form': comment_form,
         })
 
+
 @login_required
 @require_POST
 def post_like(request):
@@ -57,11 +63,12 @@ def post_like(request):
         message = "좋아요 취소"
     else:
         message = "좋아요"
-        
-    context = {'like_count':post.like_count,
-              'message':message}
+    
+    context = {'like_count': post.like_count,
+              'message': message}
+    
     return HttpResponse(json.dumps(context), content_type="application/json")
-
+    
 @login_required
 @require_POST
 def post_bookmark(request):
@@ -76,11 +83,20 @@ def post_bookmark(request):
     else:
         message = "북마크"
         is_bookmarked = 'Y'
-        
-    context = {'is_bookmarked':is_bookmarked,
-              'message':message}
+    
+    context = {'is_bookmarked': is_bookmarked,
+              'message': message}
+    
     return HttpResponse(json.dumps(context), content_type="application/json")
-
-
-
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
